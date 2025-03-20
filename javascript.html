@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="hobbies.html">兴趣爱好</a></li>
+            <li><a href="schedule.html">计算机网络课表</a></li>
+            <li><a href="survey.html">调查表</a></li>
+            <li><a href="javascript_demo.html">JavaScript 演示</a></li>
+        </ul>
+    </nav>
+    <button onclick="showAlert()">弹出对话框</button>
+    <button onclick="changeBackgroundColor()">改变背景色</button>
+    <button onclick="showCurrentTime()">显示当前时间</button>
+    <div id="time-display"></div>
+    <script>
+        function showAlert() {
+            alert('这是一个弹出对话框！');
+        }
+
+        function changeBackgroundColor() {
+            const colors = ['red', 'green', 'blue', 'yellow', 'orange',"pink"];
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[randomIndex];
+        }
+
+        function showCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('time-display').innerHTML = `当前时间: ${timeString}`;
+        }
+    </script>
+</body>
+
+</html>
